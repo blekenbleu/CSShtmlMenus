@@ -11,11 +11,14 @@ Siblings appear the same, whether one list item is embedded in another or concat
 
 Menu text without href is not boxed.  
 Paired hrefs in one list item should be immediately adjacent, no white space.  
-If first text of href pair is shorter, path from parent does not split them.
+If first text of href pair is shorter, vertical path from parent does not split them.
+
+Hover partly fails if not all entries inside one ul.
 
 Ported Root: change min-width from 150 to 50;
  margin-top from -15 to 15
 
-Remove tabs in CSS3 style for better match to Horizontal style 
-CSS3 involved hrefs to generate boxes so that either entry on a branch
-could share a result.
+Remove tabs in CSS3 style for better match to Horizontal style.   
+Instead of generating boxes based on list elements,  
+CSS3 involved hrefs to allow generating box pairs within list elements  
+ so that either href entry on a branch shares any results.

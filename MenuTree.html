@@ -29,7 +29,7 @@
   transition: all 0.5s;
 }
 
-/*We will use ::before and ::after to draw the connectors*/
+/* Use ::before and ::after to draw connectors*/
 
 .tree li::before, .tree li::after{
   content: '';
@@ -130,7 +130,7 @@
 /* Hover effects*/
 /* apply to the lineage of the element also*/
 .tree li a:hover, .tree li a:hover~ul li a {
-  background: #c8f4e8; color: #000; border: 1px solid #94b0a4;
+  background: #c8f4e8; color: #000; border: 2px solid #94b0a4;
 }
 /*Connector styles on hover*/
 .tree li a:hover~ul li::after, 
@@ -140,18 +140,19 @@
 {
   border-color: #94b0a4;
 }
+
 </style>
 </head>
 
 <body>
 	<!--
-	Create a family tree using just CSS(3)
-	The markup will be simple nested lists
+	Create a tree using CSS(3) style above.
+	Markup uses simple nested lists for connections and hrefs for boxes
 	-->
         Hacked from <a href="http://thecodeplayer.com/walkthrough/css3-family-tree">http://thecodeplayer.com/walkthrough/css3-family-tree</a><br>
-        Replace CSS in that style with CSS from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br>
+        Replace vertical CSS in that style with horizontal CSS from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br>
 
-	<div id="wrapper"><span class="label">Root</span>
+	<div id="wrapper"><span class="label">Root</span></div>
 
 	<div class="tree">
 		<ul>
@@ -159,13 +160,19 @@
 				<a href="Description.htm#U1">Uncle</a>
 				<ul>
 					<li>
-						<a href="Description.htm#N1">Favorite Nephew</a><a href="Description.htm#N1">Someone's Niece</a>
+						<a href="Description.htm#N1">Favorite Nephew</a><a href="Description.htm#N0">Someone's Niece</a>
 					</li>
 					<li>
 						<a href="Description.htm#N1">Orphan Nephew</a>
 					</li>
 				</ul>
 			</li>
+<!--
+		</ul>
+	</div>
+	<div class="tree">
+		<ul>
+ -->
 			<li>
 				<a href="#">Parent</a>
 				<ul>

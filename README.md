@@ -22,3 +22,8 @@ Remove tabs in CSS3 style for better match to Horizontal style.
 Instead of generating boxes based on list elements,  
 CSS3 involved hrefs to allow generating box pairs within list elements  
  so that either href entry on a branch shares any results.
+
+Added and ignored css3tree.html, HorizontalTree.htm, HtreeUL.html;
+* CSS tree diagram learning experiments
+* commented out each style entry to detect effects
+* added comments to describe those effects

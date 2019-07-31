@@ -15,15 +15,25 @@ If first text of href pair is shorter, vertical path from parent does not split 
 
 Hover partly fails if not all entries inside one ul.
 
-Ported Root: change min-width from 150 to 50;
- margin-top from -15 to 15
-
-Remove tabs in CSS3 style for better match to Horizontal style.   
-Instead of generating boxes based on list elements,  
-CSS3 involved hrefs to allow generating box pairs within list elements  
- so that either href entry on a branch shares any results.
-
 Added and ignored css3tree.html, HorizontalTree.htm, HtreeUL.html;
 * CSS tree diagram learning experiments
-* commented out each style entry to detect effects
-* added comments to describe those effects
+ - HorizontalTree.htm generates nearly desired results,
+   but CSS requires complex html.  
+ - css3tree.html CSS generates vertical tree using simpler html  
+ - HtreeUL.html attempted to apply css3tree.html CSS to HorizontalTree.htm  
+ - MenuTree.html borrows HtreeUL.html CSS and learning  
+ to convert css3tree.html from vertical to horizontal.    
+
+Removed tabs in css3tree.html for easier comparison to HorizontalTree.htm.   
+Instead of generating boxes based on list elements,  
+css3tree.html used hrefs to allow generating box pairs within list elements
+ so that either href entry on a branch shares any results.
+* commented out style entries to detect effects  
+* added comments to describe those effects  
+
+Associating vertical branches with `<ul>` fails:  
+* vertical branch line extends the full height,  
+  while line only among `<li>` and `<dd>` children is wanted.  
+
+Settling for square joins simplifies stem and branch code,  
+but hover got broken...

@@ -1,6 +1,6 @@
 # CSShtmlMenus
 
-Contents of interest:  [MenuTree.html](MenuTree.html) and [help.htm](help.htm)
+Contents of interest:  [MenuTree.html](https://blekenbleu.github.io/HTML/MenuTree.html) and [help.htm](https://blekenbleu.github.io/HTML/help.htm)
 
 See [CSS3 Family Tree](http://thecodeplayer.com/walkthrough/css3-family-tree) for vertical tree using CSS and html (mostly unordered list) without Javascript
 

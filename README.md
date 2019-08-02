@@ -36,5 +36,5 @@ Associating vertical branches with `<ul>` fails:
 Simplified CSS by settling for square joins between all branches and leaf stems.  
 Hardest for me was sorting out parent pairings.  
 
-To Do:
-* drop-down help for hover over node
+Tool tips:
+* Use [HTML title Attribute](https://www.w3schools.com/tags/att_global_title.asp) in menu element `<p>` tags, e.g. `<p title="your tool tip here">Menu element</p>`

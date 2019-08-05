@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
 <head>
-<title>Menu Tree</title>
+<title>nanoVNA Menu</title>
 
 <!--
   Tree diagrams are comparable to HTML lists;
@@ -254,111 +254,149 @@
   <ul> - generates vertical branches
   <li> - generates horizontal stems
   Only for right-most generation, use <dl>, <dd> instead of <ul>, <li>
+  Hacked from http://thecodeplayer.com/walkthrough/css3-family-tree
+  Replaced that vertical CSS style with horizontal from https://codepen.io/P233/pen/Kzbsi
  -->
-        Hacked from <a href="http://thecodeplayer.com/walkthrough/css3-family-tree">http://thecodeplayer.com/walkthrough/css3-family-tree</a><br>
-        Replaced that vertical CSS style with horizontal from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br><br>
+<h3 align=center>nanoVNA Menu</h3>
 
 <div class="tree">
 <ul>
 <li>
-  <p><a href="help.htm#U1">Uncle</a> </p>
+  <p><a href="nVhelp.htm#U1">DISPLAY</a></p>
   <ul>
     <li>
       <p title="tooltip
-for orphan"> Orphan Nephew</p>
-      <dl>
-        <dd>
-          <p>Grand Nephew 1</p>
-        </dd>
-        <dd>
-          <p>Grand Nephew 2</p>
-        </dd>
-      </dl>
-    </li>
-    <li>
-      <p>Another Nephew</p>
-      <dl>
-        <dd>
-          <p>Grand Nephew 3</p>
-        </dd>
-        <dd>
-          <p>Grand Nephew 4</p>
-        </dd>
-      </dl>
-    </li>
-    <li>
-      <p title="look towards bottom
-in hyperlink">Favorite <a href="help.htm#N1">Nephew</a></p><p>Someone's <a href="help.htm#N0">Niece</a></p>
-      <dl>
-        <dd>
-          <p>Grand Niece 0</p>
-        </dd>
-        <dd>
-          <p>Grand Niece 1</p>
-        </dd>
-        <dd>
-          <p>Grand Niece 2</p>
-        </dd>
-        <dd>
-          <p>Grand Niece 3</p>
-        </dd>
-        <dd>
-          <p>Grand Niece 4</p>
-        </dd>
-      </dl>
-    </li>
-    <li>
-      <p>Child</p>
+for orphan">TRACE</p>
       <ul>
-        <li>
-          <p>Grand Child</p>
-        </li>
+        <li><p id="yel">TRACE 0</p><dl><dd><p>OFF</p></dd><dd><p>SINGLE</p></dd></li>
+        <li><p id="blu">TRACE 1</p><dl><dd><p>OFF</p></dd><dd><p>SINGLE</p></dd></li>
+        <li><p id="grn">TRACE 2</p><dl><dd><p>OFF</p></dd><dd><p>SINGLE</p></dd></li>
+        <li><p id="red">TRACE 3</p><dl><dd><p>OFF</p></dd><dd><p>SINGLE</p></dd></li>
       </ul>
+    </li>
+    <li>
+      <p>FORMAT</p>
+      <dl>
+        <dd><p>LOGMAG</p></dd>
+        <dd><p>PHASE</p></dd>
+        <dd><p>DELAY</p></dd>
+        <dd><p>SMITH</p></dd>
+        <dd><p>SWR</p></dd>
+        <dd><p>POLAR</p><p>LINEAR</p></dd>
+      </dl>
+    </li>
+    <li>
+      <p>SCALE</p>
+      <dl>
+        <dd><p>SCALE/DIV</p><p>NUM KEYS</p></dd>
+        <dd><p>REFERENCE POSITION</p><p>NUM KEYS</p></dd>
+        <dd><p>ELECTRICAL<br>DELAY</p><p>NUM KEYS</p></dd>
+      </dl>
+      <br><br><br>
+    </li>
+    <li>
+      <p>CHANNEL</p>
+      <dl>
+        <dd>
+          <p>CH0 REFLECT</p>
+        </dd>
+        <dd>
+	  <p>CH1 THROUGH</p>
+        </dd>
+      </dl>
     </li>
   </ul>
 </li>
 <li>
-  <p>Parent</p>
+  <p>MARKER</p>
   <ul>
     <li>
-      <p>Child</p>
-      <ul>
-        <li>
-          <p>Grand Child</p>
-        </li>
-	<li>
-      <p>Sub Parent 1</p><p>Sub Parent 2</p>
-	</li>
-        <li><p>Grand Child</p></li>
-      </ul>
+      <p>SELECT<br>MARKER</p>
+      <dl>
+	<dd><p>MARKER 1</p></dd>
+	<dd><p>MARKER 2</p></dd>
+	<dd><p>MARKER 3</p></dd>
+	<dd><p>MARKER 4</p></dd>
+	<dd><p>ALL OFF</p></dd>
+      </dl>
+    </li>
+    <dt>
+    <dl id="skip">
+      <dd><p>START</p></dd>
+      <dd><p>STOP</p></dd>
+      <dd><p>CENTER</p></dd>
+      <dd><p>SPAN</p></dd>
+    </dl>
+    </dt>
+  </ul>
+<br>
+</li>
+<li>
+  <p>STIMULUS</p>
+    <dl>
+      <dd><p>START</p><p>NUM KEYS</p></dd>
+      <dd><p>STOP</p><p>NUM KEYS</p></dd>
+      <dd><p>CENTER</p><p>NUM KEYS</p></dd>
+      <dd><p>SPAN</p><p>NUM KEYS</p></dd>
+      <dd><p>CW FREQ</p><p>NUM KEYS</p></dd>
+      <dd><p>PAUSE SWEEP</p></dd>
+    </dl>
+    <br>
+    <br>
+    <br>
+</li>
+<li>
+  <p>CAL</p>
+    <ul>
+      <li><p>CALIBRATE</p>
+	<ul>
+	  <li><p>OPEN</p></li>
+	  <li><p>SHORT</p></li>
+	  <li><p>LOAD</p></li>
+	  <li><p>ISOLATION</p></li>
+	  <li><p>THRU</p></li>
+	  <li><p>DONE</p>
+	    <dl>
+	      <dd><p>SAVE 0</p></dd>
+	      <dd><p>SAVE 1</p></dd>
+	      <dd><p>SAVE 2</p></dd>
+	      <dd><p>SAVE 3</p></dd>
+	      <dd><p>SAVE 4</p></dd>
+	    </dd>
+	  </li>
+	</ul>
+      </li>
+      <li id="up"><p>RESET</p></li>
+      <li ><p>CORRECT</p></li>
+    </ul>
+</li>
+<li>
+  <p>RECALL<br>SAVE</p>
+  <ul>
+    <li>
+      <p>RECALL</p>
+      <dl>
+        <dd><p>RECALL 0</p></dd>
+        <dd><p>RECALL 1</p></dd>
+        <dd><p>RECALL 2</p></dd>
+        <dd><p>RECALL 3</p></dd>
+        <dd><p>RECALL 4</p></dd>
+      </dl>
     </li>
     <li>
-      <p>Sub Parent 1</p><p>Sub Parent 2</p>
-      <ul>
-        <li><p>Grand Child</p><p>Fair Friend</p>
-	  <ul>
-	    <li><p>Vert align</p></li>
-	    <li><p>Check below</p></li>
-	  </ul>
-	</li>
-        <li>
-          <p>Grand Child</p>
-          <dl>
-            <dd>
-              <p>Great Grand Child</p>
-            </dd>
-            <dd>
-              <p>Great Grand Child</p>
-            </dd>
-            <dd>
-              <p>Great Grand Child</p><p>Good Friend</p>
-            </dd>
-          </dl>
-        </li>
-        <li><p>Grand Child</p></li>
-      </ul>
+      <p>SAVE</p>
+      <dl>
+        <dd><p>SAVE 0</p></dd>
+        <dd><p>SAVE 1</p></dd>
+        <dd><p>SAVE 2</p></dd>
+        <dd><p>SAVE 3</p></dd>
+        <dd><p>SAVE 4</p></dd>
+      </dl>
     </li>
-  </ul>
+  </ul>    
+</li>
+<li>
+  <p>CLOSE</p>
 </li>
 </ul>
 </div>

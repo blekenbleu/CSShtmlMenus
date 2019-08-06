@@ -5,16 +5,17 @@
 
 <!--
   Tree diagrams are comparable to HTML lists;
-  this CSS overrides HTML list markup to draw trees.
+  this CSS modifies HTML list markup to draw trees.
   Tree diagrams have no real trunks,
   only leaves (<p>), stems(<li>) and branches (<ul>).
-  Horizontal trees have chilren right of parents,
+  Horizontal trees have children right of parents,
   so vertical branches and horizontal stems.
-  CSS dislikes comments nested in comments...
  -->
 
 <style type="text/css" media="screen">
   * {margin: 0; padding: 0;}
+
+/* Do NOT nest comments inside comments!! */
 
 /* shift content down and left */
 .tree {
@@ -39,7 +40,7 @@
   top: -44px;
   left: 110px;
   list-style-type: none;
-  /* padding for text boxes */
+  /* text box padding */
   padding: 15px 5px 0px 5px;
 }
 
@@ -66,11 +67,24 @@
   list-style-type: none;
 }
 
-#up {
+#dlpad {	/* for <li><dl> */
+  padding-bottom: 8px;
+}
+
+#pp {	/* padding for <li> with <p><p> */
+  padding-bottom: 34px;
+}
+  
+
+#up10 {
+  margin-top: -10px;
+}
+
+#up30 {
   margin-top: -30px;
 }
 
-#skip {
+.tree dt {	/* between <ul> and <dl> if no <li><p> */
   margin-left: -6px;
 }
 
@@ -202,8 +216,8 @@
   content: '';
   border-top: 1px solid #000;
   top: 10px;
-  width: 100%; /* vertically center on boxes */
-  left: -62px;
+  width: 101%; /* vertically center on boxes */
+  left: -63px;
 }
 
 /* shorter horizontal branch above first child */
@@ -264,7 +278,7 @@
 <li>
   <p><a href="nVhelp.htm#U1">DISPLAY</a></p>
   <ul>
-    <li>
+    <li id="dlpad">
       <p title="tooltip
 for orphan">TRACE</p>
       <ul>
@@ -274,7 +288,7 @@ for orphan">TRACE</p>
         <li><p id="red">TRACE 3</p><dl><dd><p>OFF</p></dd><dd><p>SINGLE</p></dd></li>
       </ul>
     </li>
-    <li>
+    <li id="dlpad">
       <p>FORMAT</p>
       <dl>
         <dd><p>LOGMAG</p></dd>
@@ -285,32 +299,27 @@ for orphan">TRACE</p>
         <dd><p>POLAR</p><p>LINEAR</p></dd>
       </dl>
     </li>
-    <li>
+    <li id="pp">
       <p>SCALE</p>
       <dl>
         <dd><p>SCALE/DIV</p><p>NUM KEYS</p></dd>
         <dd><p>REFERENCE POSITION</p><p>NUM KEYS</p></dd>
         <dd><p>ELECTRICAL<br>DELAY</p><p>NUM KEYS</p></dd>
       </dl>
-      <br><br><br>
     </li>
     <li>
       <p>CHANNEL</p>
       <dl>
-        <dd>
-          <p>CH0 REFLECT</p>
-        </dd>
-        <dd>
-	  <p>CH1 THROUGH</p>
-        </dd>
+        <dd><p>CH0 REFLECT</p></dd>
+        <dd><p>CH1 THROUGH</p></dd>
       </dl>
     </li>
   </ul>
 </li>
-<li>
+<li id="dlpad">
   <p>MARKER</p>
   <ul>
-    <li>
+    <li id="dlpad">
       <p>SELECT<br>MARKER</p>
       <dl>
 	<dd><p>MARKER 1</p></dd>
@@ -321,17 +330,16 @@ for orphan">TRACE</p>
       </dl>
     </li>
     <dt>
-    <dl id="skip">
-      <dd><p>START</p></dd>
-      <dd><p>STOP</p></dd>
-      <dd><p>CENTER</p></dd>
-      <dd><p>SPAN</p></dd>
-    </dl>
+      <dl>
+        <dd><p>START</p></dd>
+        <dd><p>STOP</p></dd>
+        <dd><p>CENTER</p></dd>
+        <dd><p>SPAN</p></dd>
+      </dl>
     </dt>
   </ul>
-<br>
 </li>
-<li>
+<li id="pp">
   <p>STIMULUS</p>
     <dl>
       <dd><p>START</p><p>NUM KEYS</p></dd>
@@ -341,9 +349,6 @@ for orphan">TRACE</p>
       <dd><p>CW FREQ</p><p>NUM KEYS</p></dd>
       <dd><p>PAUSE SWEEP</p></dd>
     </dl>
-    <br>
-    <br>
-    <br>
 </li>
 <li>
   <p>CAL</p>
@@ -362,18 +367,18 @@ for orphan">TRACE</p>
 	      <dd><p>SAVE 2</p></dd>
 	      <dd><p>SAVE 3</p></dd>
 	      <dd><p>SAVE 4</p></dd>
-	    </dd>
+	    </dl>
 	  </li>
 	</ul>
       </li>
-      <li id="up"><p>RESET</p></li>
+      <li id="up30"><p>RESET</p></li>
       <li ><p>CORRECT</p></li>
     </ul>
 </li>
-<li>
+<li id="up10">
   <p>RECALL<br>SAVE</p>
   <ul>
-    <li>
+    <li id="dlpad">
       <p>RECALL</p>
       <dl>
         <dd><p>RECALL 0</p></dd>

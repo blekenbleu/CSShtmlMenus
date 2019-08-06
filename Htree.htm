@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Htree UL</title>
+<style>
+    *, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  color: #ffffff;
+  font: 16px Verdana, sans-serif;
+  background: #000000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tree {
+  margin-top: 125px;
+  margin-left: -60px;
+}
+
+/* text boxes */
+.tree p {
+  position: relative;
+  display: block;
+  /* changing this impacts other HHH */
+  width: 140px;
+  line-height: 20px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 1.0);
+  left: 0;
+  top: 50%;
+  margin-top: 0px;
+  z-index: 1;
+}
+
+.tree dl {
+  position: relative;
+  top: -40px;
+  /* changing p width impacts this HHH */
+  margin-left: 170px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* child entries */
+.tree dt {
+  position: relative;
+  clear: left;
+}
+
+/* avoid redundant vertical space */
+.tree dt:last-child {
+  height: 0;
+}
+
+/* root entries */
+.tree dd {
+  position: relative;
+  left: -40px;
+}
+
+.tree ul {
+  position: relative;
+  top: 0px;
+  left: -40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.tree li {
+  position: relative;
+  float: left;
+  /* disable list bullets */
+  list-style-type: none;
+  padding-top: 10px;  /* unlike margin, adds height */
+  margin-right: 20px;
+}
+
+/* horizontal connectors ------------------ */
+/* horizontal stems before <dt>, <dd> entries */
+.tree dd::before, .tree dt::before {
+  position: absolute;
+  content: "";
+  /* horizontal connector before entry */
+  border-top: 2px solid #ffffff;
+  top: 10px;
+  width: 15px;
+  left: -15px;
+}
+
+/* longer stem from first <dt> to parent */
+.tree dt:first-child::before  {
+  width: 30px;
+  left: -30px;
+}
+
+/* horizontal branches above <li> entries */
+.tree li::after {
+  position: absolute;
+  content: "";
+  border-top: 2px solid #ffffff;
+  top: -4px;
+  left: 50%;
+  /* changing p width impacts this HHH */
+  width: 160px;
+}
+
+.tree li:last-child::after {
+  display: none;
+}
+
+/* vertical branches */
+.tree dt::after, dd::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  border-left: 2px solid #ffffff;
+  min-height: 38px;  /* force vertical connections */
+  left: -15px;
+  top: 12px;
+}
+
+.tree dt:last-child::after {
+  display: none;
+}
+
+/* vertical branch for parent, left of horizontal entries */
+.tree li:first-child::before {
+  height: 100%;
+  left: -15px;
+  top: 10px;
+}
+
+/* vertical stems to branches */
+.tree li::before {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #ffffff;
+  left: 50%;
+  height: 14px;
+  top: -4px;
+}
+
+/* longer vertical stem from first <li> to parent */
+.tree ul::before {
+  position: absolute;
+  content: "";
+  border-left: 2px solid #ffffff;
+  height: 30px;
+  top: -18px;
+  /* changing p width impacts this HHH */
+  left: 108px;
+}
+
+</style>
+</head>
+
+<body translate="no">
+Horizontal tree adapted from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br>
+
+<div class="tree">
+<dl>
+  <dd><p>Entry-1</p>
+    <dl>
+      <dt><p>Entry-1-1</p>
+        <dl>
+          <dt><p>Entry-1-1-1</p></dt>
+        </dl>
+      </dt>
+      <dt><p>Entry-1-2</p>
+        <dl>
+          <dt><p>Entry-1-2-1</p></dt>
+        </dl>
+      </dt>
+      <dt><p>Entry-1-3</p>
+        <dl>
+          <dt><p>Entry-1-3-1</p></dt>
+        </dl>
+      </dt>
+    </dl>
+  </dd>
+  <dt><p>Entry-2</p></dt>
+  <dt><p>Entry-2.5</p></dt>
+  <dt><p>Entry-3</p>
+    <dl>
+      <dt><p>Entry-3-1</p></dt>
+      <dt><p>Entry-3-2</p></dt>
+	<ul>
+	  <li><p>li child 1</p></li>
+	  <li><p>li child 2</p></li>
+	  <li><p>li child 3</p></li>
+	</ul>
+      <dt><p>Entry-3-3</p>
+        <dl>
+          <dt><p>Entry-3-3-1</p></dt>
+          <dt><p>Entry-3-3-2</p>
+            <dl>
+              <dt><p>Entry-3-3-2-1</p></dt>
+              <dt><p>Entry-3-3-2-2</p></dt>
+            </dl>
+          </dt>
+          <dt><p>Entry-3-3-3</p></dt>
+        </dl>
+      </dt>
+      <dt><p>Entry-3-4</p></dt>
+	<ul>
+	  <li><p>li child 1<br>multi-line</p></li>
+	  <li><p>li child 2</p></li>
+	  <li><p>li child 3</p></li>
+	</ul>
+      <dt><p>Entry-3-5</p></dt>
+    </dl>
+  </dt>
+  <dt><p>Entry-4</p>
+  </dt>
+  <dt><p>Entry-5</p></dt>
+</dl>
+
+</body>
+</html>

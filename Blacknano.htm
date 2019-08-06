@@ -28,7 +28,7 @@ body {
   position: relative;
   display: block;
   /* changing this impacts other HHH */
-  width: 140px;
+  width: 80px;
   line-height: 20px;
   text-align: center;
   border: 2px solid #ffffff;
@@ -85,7 +85,7 @@ body {
   position: relative;
   top: -35px;
   /* changing p width impacts this HHH */
-  margin-left: 170px;
+  margin-left: 110px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -212,7 +212,7 @@ body {
   height: 30px;
   top: -18px;
   /* changing p width impacts this HHH */
-  left: 113px;
+  left: 85px;
 }
 
 /* Hover effect: colorize boxes */
@@ -251,74 +251,130 @@ body {
 
 </style>
 </head>
-
+<!--
+ adapted from https://codepen.io/P233/pen/Kzbsi
+ -->
 <body translate="no">
-Horizontal tree adapted from <a href="https://codepen.io/P233/pen/Kzbsi">https://codepen.io/P233/pen/Kzbsi</a><br>
+
+<h3 align=center>nanoVNA Menu</h3>
 
 <div class="tree">
 <dl>
-  <dd><p>Entry-1</p>
+  <dd><p><a href="nVhelp.htm#U1">DISPLAY</a></p>
     <dl>
-      <dt><p>Entry-1-1</p>
+      <dt><p title="2 or 4, depending on firmware">TRACE</p>
         <dl>
-          <dt><p>Entry-1-1-1</p></dt>
-        </dl>
+          <dt><p id="yel">TRACE 0</p><dl><dt><p>OFF</p></dt><dt><p>SINGLE</p></dt></dl></dt>
+          <dt><p id="blu">TRACE 1</p><dl><dt><p>OFF</p></dt><dt><p>SINGLE</p></dt></dl></dt>
+          <dt><p id="grn">TRACE 2</p><dl><dt><p>OFF</p></dt><dt><p>SINGLE</p></dt></dl></dt>
+          <dt><p id="red">TRACE 3</p><dl><dt><p>OFF</p></dt><dt><p>SINGLE</p></dt></dl></dt>
+        </dl> 
       </dt>
-      <dt><p>Entry-1-2</p>
-        <dl>
-          <dt><p>Entry-1-2-1</p></dt>
-        </dl>
+      <dt><p>FORMAT</p>
+        <ul>
+          <li><p>LOGMAG</p></li>
+	  <li><p>PHASE</p></li>
+	  <li><p>DELAY</p></li>
+	  <li><p>SMITH</p></li>
+	  <li><p>SWR</p></li>
+	  <li><p>POLAR</p><p>LINEAR</p></li>
+        </ul>
       </dt>
-      <dt><p>Entry-1-3</p>
-        <dl>
-          <dt><p>Entry-1-3-1</p></dt>
-        </dl>
+      <dt><p>SCALE</p>
+        <ul>
+          <li id="p60"><p>SCALE/DIV</p><p>NUM KEYS</p></li>
+          <li><p>REFERENCE POSITION</p><p>NUM KEYS</p></li>
+	  <li><p>ELECTRICAL<br>DELAY</p><p>NUM KEYS</p></li>
+        </ul>
+      </dt>
+      <dt><p>CHANNEL</p>
+        <ul>
+	  <li><p>CH0 REFLECT</p></li>
+	  <li><p>CH1 THROUGH</p></li>
+        </ul>
+      </dt>
+      <dt><p>BACK</p>
       </dt>
     </dl>
   </dd>
-  <dt><p>Entry-2</p>
-	<ul>
-	  <li><p>li child 1<br>multi-line</p></li>
-	  <li><p>li child 2</p></li>
-	  <li><p>li child 3</p></li>
-	</ul>
-  </dt>
-  <dt><p>Entry-2.5</p></dt>
-  <dt><p>Entry-3</p>
+  <dt><p>MARKER</p>
     <dl>
-      <dt><p>Entry-3-1</p></dt>
-      <dt><p>Entry-3-2</p>
-	<ul>
-	  <li><p>li child 1</p></li>
-	  <li><p>li child 2</p></li>
-	  <li><p>li child 3</p></li>
-	</ul>
-      </dt>
-      <dt><p>Entry-3-3</p>
-        <dl>
-          <dt><p>Entry-3-3-1</p></dt>
-          <dt><p>Entry-3-3-2</p>
-            <dl>
-              <dt><p>Entry-3-3-2-1</p></dt>
-              <dt><p>Entry-3-3-2-2</p></dt>
-            </dl>
-          </dt>
-          <dt><p>Entry-3-3-3</p></dt>
-        </dl>
-      </dt>
-      <dt><p>Entry-3-4</p>
-	<ul>
-	  <li><p>li child 1<br>multi-line</p></li>
-	  <li><p>li child 2</p></li>
-	  <li><p>li child 3</p></li>
-	</ul>
-      </dt>
-      <dt><p>Entry-3-5</p></dt>
+	<dt id="p20"><p>SELECT MARKER
+	  <ul>
+	  <li><p>MARKER 1</p></li>
+	  <li><p>MARKER 2</p></li>
+	  <li><p>MARKER 3</p></li>
+	  <li><p>MARKER 4</p></li>
+	  <li><p>ALL OFF</p></li>
+	  </ul>
+	</dt>
+	<dt><p>START</p></dt>
+	<dt><p>STOP</p></dt>
+	<dt><p>CENTER</p></dt>
+	<dt><p>SPAN</p></dt>
     </dl>
   </dt>
-  <dt><p>Entry-4</p>
+  <dt><p>STIMULUS</p>
+    <ul>
+      <li id="p40"><p>START</p><p>NUM KEYS</p></li>
+      <li><p>STOP</p><p>NUM KEYS</p></li>
+      <li><p>CENTER</p><p>NUM KEYS</p></li>
+      <li><p>SPAN</p><p>NUM KEYS</p></li>
+      <li><p>CW FREQ</p><p>NUM KEYS</p></li>
+      <li><p>PAUSE SWEEP</p></li>
+    </ul>
   </dt>
-  <dt><p>Entry-5</p></dt>
+  <dt><p>CAL</p>
+    <dl>
+      <dt><p>CALIBRATE</p>
+        <dl>
+          <dt><p>OPEN</p></dt>
+          <dt><p>SHORT</p></dt>
+          <dt><p>LOAD</p></dt>
+          <dt><p>ISOLATION</p></dt>
+          <dt><p>THRU</p></dt>
+          <dt><p>DONE</p>
+            <ul>
+              <li><p>SAVE 0</p></li>
+              <li><p>SAVE 1</p></li>
+              <li><p>SAVE 2</p></li>
+              <li><p>SAVE 3</p></li>
+              <li><p>SAVE 4</p></li>
+            </ul>
+          </dt>
+    	  <dt><p>BACK</p></dt>
+        </dl>
+      </dt>
+      <dt><p>RESET</p></dt>
+      <dt><p>CORRECT</p></dt>
+    </dl>
+  </dt>
+  <dt><p>RECALL SAVE</p>
+  <dl>
+    <dt>
+      <p>RECALL</p>
+      <ul>
+        <li><p>RECALL 0</p></li>
+        <li><p>RECALL 1</p></li>
+        <li><p>RECALL 2</p></li>
+        <li><p>RECALL 3</p></li>
+        <li><p>RECALL 4</p></li>
+      </ul>
+    </dt>
+    <dt>
+      <p>SAVE</p>
+      <ul>
+        <li><p>SAVE 0</p></li>
+        <li><p>SAVE 1</p></li>
+        <li><p>SAVE 2</p></li>
+        <li><p>SAVE 3</p></li>
+        <li><p>SAVE 4</p></li>
+      </ul>
+    </dt>
+    <dt><p>BACK</p>
+    </dt>
+  </dl>
+  </dt>
 </dl>
 
 </body>

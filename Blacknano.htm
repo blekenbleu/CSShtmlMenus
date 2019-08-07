@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Htree UL</title>
+<title>Blacknano</title>
 <style>
     *, *::before, *::after {
   -webkit-box-sizing: border-box;
@@ -274,7 +274,7 @@ body {
         <ul>
           <li><p>LOGMAG</p></li>
 	  <li><p>PHASE</p></li>
-	  <li><p>DELAY</p></li>
+	  <li><p title="not implemented">DELAY</p></li>
 	  <li><p>SMITH</p></li>
 	  <li><p>SWR</p></li>
 	  <li><p>POLAR</p><p>LINEAR</p></li>
@@ -282,12 +282,12 @@ body {
       </dt>
       <dt><p>SCALE</p>
         <ul>
-          <li id="p60"><p>SCALE/DIV</p><p>NUM KEYS</p></li>
-          <li><p>REFERENCE POSITION</p><p>NUM KEYS</p></li>
-	  <li><p>ELECTRICAL<br>DELAY</p><p>NUM KEYS</p></li>
+          <li id="p60"><p>SCALE/DIV</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+          <li><p>REFERENCE POSITION</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+	  <li><p>ELECTRICAL<br>DELAY</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
         </ul>
       </dt>
-      <dt><p>CHANNEL</p>
+      <dt><p title="select port to measure">CHANNEL</p>
         <ul>
 	  <li><p>CH0 REFLECT</p></li>
 	  <li><p>CH1 THROUGH</p></li>
@@ -311,28 +311,28 @@ body {
 	<dt><p>START</p></dt>
 	<dt><p>STOP</p></dt>
 	<dt><p>CENTER</p></dt>
-	<dt><p>SPAN</p></dt>
+	<dt><p title="not implemented">SPAN</p></dt>
     </dl>
   </dt>
-  <dt><p>STIMULUS</p>
+  <dt><p title="set sweep or single frequency">STIMULUS</p>
     <ul>
-      <li id="p40"><p>START</p><p>NUM KEYS</p></li>
-      <li><p>STOP</p><p>NUM KEYS</p></li>
-      <li><p>CENTER</p><p>NUM KEYS</p></li>
-      <li><p>SPAN</p><p>NUM KEYS</p></li>
-      <li><p>CW FREQ</p><p>NUM KEYS</p></li>
+      <li id="p40"><p title="sweep lower limit &gt 50kHz">START</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+      <li><p title="sweep upper limit &lt 900mHz">STOP</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+      <li><p title="(START+STOP)/2">CENTER</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+      <li><p title="STOP-START">SPAN</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
+      <li><p title="50 kHz &lt constant &lt 900mHz">CW FREQ</p><p title="touch screen below menu to launch">NUM KEYS</p></li>
       <li><p>PAUSE SWEEP</p></li>
     </ul>
   </dt>
   <dt><p>CAL</p>
     <dl>
-      <dt><p>CALIBRATE</p>
+      <dt><p title="press RESET to clear data before calibrating">CALIBRATE</p>
         <dl>
           <dt><p>OPEN</p></dt>
           <dt><p>SHORT</p></dt>
-          <dt><p>LOAD</p></dt>
-          <dt><p>ISOLATION</p></dt>
-          <dt><p>THRU</p></dt>
+          <dt><p title="attach 50 Ohm load to TX port">LOAD</p></dt>
+          <dt><p title="attach a 50 Ohm load to each port">ISOLATION</p></dt>
+          <dt><p title="connect SMA cable[s] between ports">THRU</p></dt>
           <dt><p>DONE</p>
             <ul>
               <li><p>SAVE 0</p></li>
@@ -345,8 +345,8 @@ body {
     	  <dt><p>BACK</p></dt>
         </dl>
       </dt>
-      <dt><p>RESET</p></dt>
-      <dt><p>CORRECT</p></dt>
+      <dt><p title="press to clear data before CALIBRATE">RESET</p></dt>
+      <dt><p title="turn calibration on or off(?)">CORRECT</p></dt>
     </dl>
   </dt>
   <dt><p>RECALL SAVE</p>

@@ -19,7 +19,6 @@ body {
 }
 
 .tree {
-  margin-top: 75px;
   margin-left: 20px;
 }
 
@@ -65,11 +64,11 @@ body {
 }
 
 a {
-  color:white;
+  color:yellow;
 }
 
 a:visited {
-  color: #00FF00;
+  color: #FF00FF;
 }
 
 /* vertically align paired <p>'s */
@@ -296,7 +295,7 @@ a:visited {
 <h3 align=center>nanoVNA Menu</h3>
 
 <div class="tree">
-<p>touch for menu</p>
+<p>Press control or touch screen for menu</p>
 <ul>
   <li><p><a href="#U1">DISPLAY</a></p>
     <ul>
@@ -321,11 +320,12 @@ a:visited {
       <li><p>SCALE</p>
         <dl>
           <dt id="p60"><p>SCALE/DIV</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-          <dt><p>REFERENCE POSITION</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-	  <dt><p>ELECTRICAL<br>DELAY</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
+          <dt><p><a href="#U132">REFERENCE POSITION</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
+	  <dt title="compensate CAL by e.g. cable length in picoseconds"><p><a href="#U133">ELECTRICAL DELAY</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
         </dl>
       </li>
-      <li><p title="select port to measure">CHANNEL</p>
+      <li><p title="select port to measure
+works for 2 and 4 trace firmware">CHANNEL</p>
         <ul>
 	  <li><p>CH0 REFLECT</p></li>
 	  <li><p>CH1 THROUGH</p></li>
@@ -333,9 +333,9 @@ a:visited {
       </li>
     </ul>
   </li>
-  <li id="u30"><p>MARKER</p>
+  <li id="u30"><p><a href="#U2">MARKER</a></p>
     <ul>
-	<li id="p20"><p>SELECT MARKER
+	<li id="p20" title="with 2 markers enabled, marker 2 will read DELTA Frequency in relation to marker 1"><p>SELECT MARKER
 	  <dl>
 	  <dt><p>MARKER 1</p></dt>
 	  <dt><p>MARKER 2</p></dt>
@@ -346,10 +346,13 @@ a:visited {
 	</li>
 	<li>
 	<dl id="li-child">
-	<dd><p>START</p></dt>
-	<dt><p>STOP</p></dt>
-	<dt><p>CENTER</p></dt>
-	<dt><p title="not implemented">SPAN</p></dt>
+	<dd><p title="increase minimum sweep frequency
+to selected marker">START</p></dt>
+	<dt><p title="decrease maximum sweep frequency
+to selected marker">STOP</p></dt>
+	<dt><p title="shift middle of frequency sweep
+to selected marker">CENTER</p></dt>
+	<dt><p title="sweep frequency between 2 current markers">SPAN</p></dt>
 	</dl>
 	</li>
     </ul>
@@ -361,12 +364,14 @@ a:visited {
       <dt><p title="(START+STOP)/2">CENTER</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
       <dt><p title="STOP-START">SPAN</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
       <dt><p title="50 kHz &lt constant &lt 900mHz">CW FREQ</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt><p>PAUSE SWEEP</p></dt>
+      <dt title="freeze data collection
+click hyperlink for saving frozen data via USB"><p><a href="#U36">PAUSE SWEEP</a></p></dt>
     </dl>
   </li>
   <li><p>CAL</p>
     <ul>
-      <li><p title="press RESET to clear data before calibrating">CALIBRATE</p>
+      <li><p title="press RESET to clear data before calibrating.<br>
+Make appropriate [dis]connections before touching associated button">CALIBRATE</p>
         <dl>
           <dd><p>OPEN</p></dt>
           <dt><p>SHORT</p></dt>
@@ -388,7 +393,7 @@ a:visited {
       <li id="u30"><p title="turn calibration on or off(?)">CORRECT</p></li>
     </ul>
   </li>
-  <li><p>RECALL SAVE</p>
+  <li title="DISPLAY+MARKER+STIMULUS+CAL settings"><p>RECALL SAVE</p>
   <ul>
     <li><p>RECALL</p>
       <dl>

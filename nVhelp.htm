@@ -11,88 +11,44 @@ In addition to selecting values to be displayed,<br>
 <h4 id="U1L1">linked from TRACE</h4>
 <p>Up to 4 simultaneous color-coded data can be plotted.<br>
 OFF seems obvious, but SINGLE may be a poor word choice...</p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<div id="N0">
-<h3>Linked from Niece</h3>
-Changing border width with hover draws attention.<br>
-Hover partly fails if not all entries inside one &lt.ul&gt. 
-</div>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<p> &nbsp </p>
-<div id="N1">
-<h3>Linked from Nephew</h3>
-Siblings appear the same, whether one list item is embedded in another<br>
- or concatenated after in the same unordered list.<br>
-<br>
-Paired parent boxes in one list item should be immediately adjacent, no white space.<br>
-If first text of href pair is shorter, path from parent does not split them.<br>
-</div>
+<h3 id="U132">linked from REFERENCE POSITION</h3>
+<p>An entry of 1-8 (0001 to 0008) places the REFERENCE line 1 to 8 grid spaces from the BOTTOM.<br>
+An entry of 8 places the reference trace location to the very TOP of the screen.</p>
+<h3 id="U133">linked from ELECTRICAL DELAY</h3>
+<p>Calibration data can only be modified with electrical delay specified in picoseconds.<br>
+For better accuracy, Hugen customized the shortest and most accurate calibrations kits possible. </p>
+<h2 id="U2">linked from MARKER</h2>
+<p>While displayed markers can in theory be manipulated by hand or stylus,<br>
+touch calibration inaccuracy typically frustrates that. Better to use the 2-way control..<br>
+<dl compact>
+<dt>SELECT MARKER</dt>
+<dd>select (by push) any of MARKER 1 - 4<br>
+selecting that same marker again toggles it off.<br>
+Sliding the control moves the selected marker.<br>
+A selected marker may be used to change START, STOP or CENTER of sweeps.<br>
+SPAN changes sweeps when 2 markers are active.</dd></dl></p>
+
+<h3 id="U36">link from PAUSE SWEEP</h3>
+This button freezes data collection.
+<p>
+The nanoVNA must remain powered on at all times to work successfully capture data via USB.<br>
+<ol compact>
+<li> With the data you wish to "save" and port to your remotely located workstation,<br>
+ navigate to STIMULUS > PAUSE SWEEP. Data at the top of the screen will freeze, confirming sweep is paused.
+
+<li> Take care to not inadvertently alter the current state...<br>
+ either by the toggle switch or touchscreen.<br>
+ Remove the NanoVNA from the DUT,<br> observe that the desired data remains on the display,<br>
+ transport it to your workstation, hotplug the device into a USB port,<br>
+ then tap on the display a couple of times.
+<br> This appears to initiate handshaking and establishes its connection with the workstation.
+
+<li> Launch the nanoVNAsharp app and connect.<br>
+
+App display should match that on the nanoVNA.
+<li>Use nanoVNAsharp facilities to save the data. 
+</ol>
+To be clear, data is <em>not</em> otherwise saved within the NanoVNA.<br>
+Once PAUSE is cancelled or the nanoVNA is power cycled, data is flushed and replaced.</p>
 </body>
 </html>

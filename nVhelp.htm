@@ -1,33 +1,175 @@
 <html>
 <head>
-<title>Menu Description</title>
+<title>nanoVNA Description</title>
 </head>
 <body>
+<h2 id="U0">
+<em>VNA</em> = <em>V</em>ector <em>N</em>etwork <em>A</em>nalyzer,</h2>
+distinguished from antenna analyzer by having two ports instead of one,<br>
+and from SWR (Standing Wave Ratio) bridge by sorting resistance vs reactance instead of impedance magnitude.
+<h3>Physical</h3>
+<p>From the <a href="https://groups.io/g/nanovna-users/attachment/14/0/NanoVNA%20User%20Guide_20190527..pdf">manual</a>,
+<sl compact>
+<li>Measurement range: 70dB (50kHz-300MHz), 50dB (300M-600MHz), 40dB(600M-900MHz)
+<li>Port swr &lt 1.1
+<li>Frequency error &lt 0.5ppm</sl>
+</p>
+Firmware employs second and third harmonics for (300M-600MHz) and (600M-900MHz), respectively:<br>
+<br>
+<em>thanks to Warren Allgyer</em>:
+<br clear>
+<img src="nanoSpectrum.gif">
+<p>
+nanoVNA begins using the second harmonic, while boosting Si5351 output, when exceeding 300 MHz.<br>
+Above 600 MHz, it begins using third harmonics with yet another Si5351 output boost.<br>
+<em>Perhaps,</em> power boost parameters are saved along with other correction factors. 
+</p>
+<em>thanks hugen@outlook.com:</em><br>
+<p>
+The Si5351 internal VCO (Voltage Controlled Oscillator) specified maximum is 900MHz<br>
+ for a divide-by-4-frequency output maximum of 225MHz.<br>
+To output 300MHz, that VCO is overclocked to 1200MHz, which not every Si5351 can.<br>
+Si5351 internal VCO operating frequency limit decreases with increasing temperature.<br>
+For significant spike artifacts (&gt0dB) at 300 MHz or 900 MHz, 800MHz firmware is recommended.
+</p>
+<b>This suggests that fully enclosed cases, raising component temperatures, may be problematic.</b>
+<p>Charging is by USB, which connector is Type C for black nanoVNAs and Micro-USB B for white gekkos.<br>
+One LED (between USB and power switch) blinks @ 1/2Hz while charging, then illuminates constantly;<br>
+&nbsp - this LED remains on for 40 seconds after USB removal or powering off, <em>perhaps discharging capacitors?</em><br>
+Another LED, between power switch and multi-directional switch, illuminates while nanoLED is powered;<br>
+&nbsp - this may be vestigal, from early nanoVNA prototypes which lacked LCD displays.</p>
+
+<h3>multi-directional switch</h3>
+<p>
+Pressing this launches menu or selects menu item;<br>
+nudging left or right migrates among launched menu items or moves selected marker.
+</p>
+
+<h2>Calibration for 4 track nanoVNA</h2>
+<em>thanks to Alan Victor</em>
+<p>
+Some notes: If you can have on hand another 50 ohm termination<br>
+and another female-female SMA adapter, it is helpful.<br>
+<br>
+Supplied and used are the TWO- matched cables, the LOADS and one SMA adapter.<br>
+Each of the NUMBERED items below represent your PRESS (SOFT KEY TOUCH).<br>
+<br>
+Turn on the VNA and note register 0 is ON.<br>
+CONNECT THE EQUAL LENGTH MALE-to-MALE COAX CABLES TO CH0 AND CH1.<br>
+<ol>
+<li> DISPLAY
+<li> TRACE 0
+<li> SINGLE
+<li> TRACE 1
+<br>
+Now we are displaying S11 and S22 ONLY both as LOGMAG.<br>
+
+<li> STIMULUS
+<li> START 100 KHz
+<li> STOP 500 MHz
+<li> BACK
+<li> CAL
+<li>RESET
+<li>CALIBRATE
+<br>
+Note! None of the softkeys on the right side touch screen are highlighted.<br>
+Place an OPEN on end of CH0 cable and this will be followed by a SHORT.<br>
+
+<li>OPEN
+<li>SHORT
+<br>
+Place a 50 ohm LOAD(s) on the end of cables for CH0 and CH1.<br>
+
+<li>LOAD
+<li>ISOLN
+<br>
+Connect the 2-cables together using the female-female SMA adapter.<br>
+
+<li>THRU
+<li>DONE
+<br>
+Finally save to a desired register.<br>
+</ol>
+That's it. Check and be sure that the open, short and 50 ohm are on the proper
+side of the chart.<br>
+ Note, the cables are CONNECTED to CH0 and CH1 and the calibration is to the end of the cables.<br>
+ The reference plane for insertion loss measure magnitude is in place of the adapter.<br>
+ However, the phase is subject to error and that needs addressed in another message.<br>
+<br>
+Also, with a thru cable connection between CH0 and CH1, the loss measure, S21 should be nearly 0 dB.
+</p>
+
+
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U1">Linked from DISPLAY</h3>
 <p>
 In addition to selecting values to be displayed,<br>
  CHANNEL submenu selects whether signals displayed are from CH0 (TX) or CH1 (RX).
 </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h4 id="U1L1">linked from TRACE</h4>
 <p>Up to 4 simultaneous color-coded data can be plotted.<br>
 OFF seems obvious, but SINGLE may be a poor word choice...</p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<h3 id="U131">linked from SCALE/DIV</h3>
+watch this space
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U132">linked from REFERENCE POSITION</h3>
-<p>An entry of 1-8 (0001 to 0008) places the REFERENCE line 1 to 8 grid spaces from the BOTTOM.<br>
+<dl>
+<dt>for e.g. LOGMAG</dt>
+<dd>An entry of 1-8 (0001 to 0008) places the REFERENCE line 1 to 8 grid spaces from the BOTTOM.<br>
 An entry of 8 places the reference trace location to the very TOP of the screen.</p>
+With default setting 7 000, changing it to 8 000 moves the trace reference (shown by a small marker
+at left of screen) up one grid space, to the top of the screen.</dd>
+<dt>for e.g SWR</dt>
+<dd>trace is off the bottom of the screen when 1:1.<br>
+Changing reference position to 180 brings the trace up onto the bottom of the screen</dd>
+</dl>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U133">linked from ELECTRICAL DELAY</h3>
 <p>Calibration data can only be modified with electrical delay specified in picoseconds.<br>
 For better accuracy, Hugen customized the shortest and most accurate calibrations kits possible. </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h2 id="U2">linked from MARKER</h2>
 <p>While displayed markers can in theory be manipulated by hand or stylus,<br>
-touch calibration inaccuracy typically frustrates that. Better to use the 2-way control..<br>
+touch calibration inaccuracy typically frustrates that. Better to use the multi-directional switch..<br>
 <dl compact>
 <dt>SELECT MARKER</dt>
 <dd>select (by push) any of MARKER 1 - 4<br>
 selecting that same marker again toggles it off.<br>
-Sliding the control moves the selected marker.<br>
+Sliding the multi-directional switch moves the selected marker.<br>
 A selected marker may be used to change START, STOP or CENTER of sweeps.<br>
 SPAN changes sweeps when 2 markers are active.</dd></dl></p>
 
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U36">link from PAUSE SWEEP</h3>
 This button freezes data collection.
 <p>
@@ -50,5 +192,11 @@ App display should match that on the nanoVNA.
 </ol>
 To be clear, data is <em>not</em> otherwise saved within the NanoVNA.<br>
 Once PAUSE is cancelled or the nanoVNA is power cycled, data is flushed and replaced.</p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
+<p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 </body>
 </html>

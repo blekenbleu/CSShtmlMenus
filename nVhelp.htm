@@ -6,8 +6,15 @@
 <h2 id="U0">
 <em>VNA</em> = <em>V</em>ector <em>N</em>etwork <em>A</em>nalyzer,</h2>
 distinguished from antenna analyzer by having two ports instead of one,<br>
-and from SWR (Standing Wave Ratio) bridge by sorting resistance vs reactance instead of impedance magnitude.
-<h3>Physical</h3>
+and from scaler analyzer e.g. SWR (Standing Wave Ratio) bridge by sorting resistance vs reactance instead of impedance magnitude.<br>
+<p>nanoVNA principles of operation are largely as described in this YouTube video by Michael Knitter:<br>
+<a href="https://www.youtube.com/watch?v=X8Z7veGV57o">Hamradio 2018 FA-VA5 presentation-UK</a>
+</p>
+<h3>firmware mitigation for 300MHz, 600MHz spikes</h3>
+Some nanoVNAs fail when overclocked to 300MHz by standard firmware;<br>
+<a href="https://groups.io/g/nanovna-users/topic/defective_nanovna/32747641?p=,,,20,0,0,0::recentpostdate%2Fsticky,,,20,2,0,32747641">here</a> is a discussion about reprogramming those.
+
+<h3>Physical attributes</h3>
 <p>From the <a href="https://groups.io/g/nanovna-users/attachment/14/0/NanoVNA%20User%20Guide_20190527..pdf">manual</a>,
 <sl compact>
 <li>Measurement range: 70dB (50kHz-300MHz), 50dB (300M-600MHz), 40dB(600M-900MHz)
@@ -46,7 +53,7 @@ nudging left or right migrates among launched menu items or moves selected marke
 </p>
 
 <h2>Calibration for 4 track nanoVNA</h2>
-<em>thanks to Alan Victor</em>
+<em>thanks to Alan Victor</em>:
 <p>
 Some notes: If you can have on hand another 50 ohm termination<br>
 and another female-female SMA adapter, it is helpful.<br>
@@ -116,8 +123,8 @@ In addition to selecting values to be displayed,<br>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h4 id="U1L1">linked from TRACE</h4>
-<p>Up to 4 simultaneous color-coded data can be plotted.<br>
-OFF seems obvious, but SINGLE may be a poor word choice...</p>
+<p>Up to 4 simultaneous color-coded data can be plotted.  Some firmware instead supports only 2.<br>
+OFF disables <em>this</em> trace;  SINGLE disables <em>all other</em> traces...?</p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
@@ -131,15 +138,17 @@ watch this space
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U132">linked from REFERENCE POSITION</h3>
+<em>thanks to Mike Brown:</em><br>
 <dl>
 <dt>for e.g. LOGMAG</dt>
 <dd>An entry of 1-8 (0001 to 0008) places the REFERENCE line 1 to 8 grid spaces from the BOTTOM.<br>
-An entry of 8 places the reference trace location to the very TOP of the screen.</p>
-With default setting 7 000, changing it to 8 000 moves the trace reference (shown by a small marker
-at left of screen) up one grid space, to the top of the screen.</dd>
-<dt>for e.g SWR</dt>
-<dd>trace is off the bottom of the screen when 1:1.<br>
-Changing reference position to 180 brings the trace up onto the bottom of the screen</dd>
+  An entry of 8 places the reference trace location to the very TOP of the screen.<br><br>
+  With default setting 7 000, changing it to 8 000 moves the trace reference<br>
+ (shown by a small marker at left of screen) up one grid space, to screen top.</dd>
+<br>
+<dt>for e.g SWR 1:1</dt>
+<dd>trace is below screen bottom.<br>
+  Changing reference position to 180 raises trace to screen bottom</dd>
 </dl>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
@@ -171,7 +180,8 @@ SPAN changes sweeps when 2 markers are active.</dd></dl></p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <p> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> </p>
 <h3 id="U36">link from PAUSE SWEEP</h3>
-This button freezes data collection.
+This button freezes data collection.<br>
+<br><em>thanks to Gary O'Neil</em>:
 <p>
 The nanoVNA must remain powered on at all times to work successfully capture data via USB.<br>
 <ol compact>

@@ -301,10 +301,16 @@ a:visited {
     <ul>
       <li><p title="2 or 4, depending on firmware"><a href="#U1L1">TRACE</a></p>
         <dl>
-          <dt><p id="yel">TRACE 0</p><dl><dd><p>OFF</p></dd><dt><p>SINGLE</p></dt></dl></dt>
-          <dt><p id="blu">TRACE 1</p><dl><dd><p>OFF</p></dd><dt><p>SINGLE</p></dt></dl></dt>
-          <dt title="4-trace firmware only"><p id="grn">TRACE 2</p><dl><dd><p>OFF</p></dd><dt><p>SINGLE</p></dt></dl></dt>
-          <dt title="4-trace firmware only"><p id="red">TRACE 3</p><dl><dd><p>OFF</p></dd><dt><p>SINGLE</p></dt></dl></dt>
+          <dt><p id="yel" title="enable if off, else goto OFF/SINGLE">TRACE 0</p><dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
+          <dt><p id="blu" title="enable if off, else goto OFF/SINGLE">TRACE 1</p>
+	    <dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
+          <dt title="4-trace firmware only;
+enable if off, else goto OFF/SINGLE"><p id="grn">TRACE 2</p><dl>
+	    <dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
+          <dt title="4-trace firmware only;
+enable if off, else goto OFF/SINGLE"><p id="red">TRACE 3</p>
+            <dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl>
+          </dt>
         </dl> 
       </li>
       <li><p>FORMAT</p>
@@ -325,7 +331,7 @@ a:visited {
       <li><p>SCALE</p>
         <dl>
           <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-          <dt><p><a href="#U132">REFERENCE POSITION</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
+          <dt><p><a href="#U132" title="position trace vertically">REFERENCE POSITION</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
 	  <dt title="compensate CAL by e.g. cable length in picoseconds"><p><a href="#U133">ELECTRICAL DELAY</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
         </dl>
       </li>

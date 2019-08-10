@@ -259,30 +259,36 @@ a:visited {
   z-index: 1;
 }
 
-/* branch and stem styles on hover */
-.tree dt p:hover~dl::before,
-.tree li p:hover~dl dt dl::before,
-.tree dt p:hover~ul li dl::before,
-.tree li p:hover~p::before,
-.tree li p:hover~ul li p::before,
-.tree li p:hover~dl dt p::before,
-.tree li p:hover~dl dd p::before,
-.tree li p:hover~ul li dl dt::before,
+/* branch and stem hover color */
+/* vertical branches */
+.tree li p:hover~ul li::after,
+.tree dt p:hover~ul li::after,
+/* horizontal stems */
+.tree li p:hover~ul li::before,
+.tree dt p:hover~ul li::before,
+/* horizontal branches */
 .tree li p:hover~ul li dl dt::after,
 .tree li p:hover~ul li dl dd::after,
-.tree dt p:hover~ul li dl dt::before,
-.tree dt p:hover~ul li dl dt::after,
-.tree dt p:hover~ul li dl dd::after,
-.tree dt p:hover~dl dt::before,
-.tree li p:hover~dl dt::before,
 .tree li p:hover~dl dt::after,
 .tree dt p:hover~dl dt::after,
 .tree li p:hover~dl dd::after,
 .tree dt p:hover~dl dd::after,
-.tree li p:hover~ul li::before,
-.tree dt p:hover~ul li::before,
-.tree li p:hover~ul li::after,
-.tree dt p:hover~ul li::after
+/* vertical stems */
+.tree li p:hover~ul li dl dt::before,
+.tree dt p:hover~ul li dl dt::before,
+.tree dt p:hover~dl dt::before,
+.tree li p:hover~dl dt::before,
+/* longer first vertical stems */
+.tree li p:hover~ul li dl::before,
+.tree dt p:hover~ul li dl::before,
+.tree li p:hover~dl dt dl::before,
+.tree dt p:hover~dl dt dl::before,
+.tree li p:hover~dl::before,
+.tree dt p:hover~dl::before,
+/* vertical stems between <p> pairs */
+.tree li p:hover~ul li dl dt p::before,
+.tree li p:hover~dl dt p::before,
+.tree li p:hover~p::before
 {
   border-color: #9400a4;
 }
@@ -299,16 +305,16 @@ a:visited {
   border-radius: 6px;
   padding: 5px 5px;
 
-  /* Position the tooltip */
-  bottom: -10px;
-  right: 80px;
+  /* tooltip position */
   position: absolute;
-  z-index: 200;
+  bottom: -10px;	/* up and left to avoid being obscured */
+  right: 80px;
+  z-index: 200;	/* does not help */
 }
 
-.tree p:hover tt /*, .tree li:hover tt, .tree dt:hover tt, .tree dd:hover tt*/ {
+.tree p:hover tt {
   visibility: visible;
-  z-index: 200;
+  z-index: 200;	/* does not help */
 }
 
 </style>

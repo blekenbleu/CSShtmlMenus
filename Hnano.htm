@@ -19,7 +19,7 @@ body {
 }
 
 .tree {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 /* text boxes */
@@ -37,7 +37,7 @@ body {
   margin-bottom: 0px;
   top: 50%;
   margin-top: 0px;
-  z-index: 1;
+  z-index: 0;
 
   /* hover action timing */
   -webkit-transition: all 0.5s;
@@ -103,6 +103,7 @@ a:visited {
 .tree li {
   position: relative;
   clear: left;
+  z-index: 0;
 }
 
 /* reduce redundant vertical space */
@@ -153,6 +154,7 @@ a:visited {
   padding-top: 10px;  /* unlike margin, adds height */
   padding-right: 10px;
   margin-right: 0px;
+  z-index: 0;
 }
 
 .tree dt {
@@ -162,6 +164,7 @@ a:visited {
   padding-right: 10px;
   margin-right: 0px;
   margin-bottom: 0px;
+  z-index: 0;
 }
 
 .tree dd {
@@ -240,8 +243,8 @@ a:visited {
   position: absolute;
   content: "";
   border-left: 2px solid #ffffff;
-  height: 30px;
-  top: -18px;
+  height: 22px;
+  top: -12px;
   /* changing p width impacts this HHH */
   left: 43px;
 }
@@ -253,6 +256,7 @@ a:visited {
 .tree ul p:hover~ul li p {
   background: #c8f4e8; color: #000;
   border: 2px solid #9400a4;
+  z-index: 1;
 }
 
 /* branch and stem styles on hover */
@@ -284,6 +288,30 @@ a:visited {
   border-color: #9400a4;
 }
 
+/* CSS hover tooltip overloading <tt> */
+.tree tt {
+  visibility: hidden;
+  display:block;
+  min-width: 20px;
+  border: 1px solid #111111;
+  background-color: white;
+  color: #106;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+
+  /* Position the tooltip */
+  bottom: -10px;
+  right: 80px;
+  position: absolute;
+  z-index: 200;
+}
+
+.tree p:hover tt /*, .tree li:hover tt, .tree dt:hover tt, .tree dd:hover tt*/ {
+  visibility: visible;
+  z-index: 200;
+}
+
 </style>
 </head>
 <!--
@@ -299,17 +327,20 @@ a:visited {
 <ul>
   <li><p><a href="#U1">DISPLAY</a></p>
     <ul>
-      <li><p title="2 or 4, depending on firmware"><a href="#U1L1">TRACE</a></p>
+      <li><p><tt>2 or 4, depending on firmware</tt><a href="#U1L1">TRACE</a></p>
         <dl>
-          <dt><p id="yel" title="enable if off, else goto OFF/SINGLE">TRACE 0</p><dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
-          <dt><p id="blu" title="enable if off, else goto OFF/SINGLE">TRACE 1</p>
-	    <dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
-          <dt title="4-trace firmware only;
-enable if off, else goto OFF/SINGLE"><p id="grn">TRACE 2</p><dl>
-	    <dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl></dt>
-          <dt title="4-trace firmware only;
-enable if off, else goto OFF/SINGLE"><p id="red">TRACE 3</p>
-            <dl><dd><p>OFF</p></dd><dt title="disable other traces"><p>SINGLE</p></dt></dl>
+          <dt><p id="yel">
+	    <tt>enable if off, else goto OFF/SINGLE</tt>TRACE 0</p>
+		<dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="blu">
+		<tt>enable if off, else goto OFF/SINGLE</tt>TRACE 1</p>
+	    <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="grn"><tt>4-trace firmware only;
+enable if off, else goto OFF/SINGLE</tt>TRACE 2</p><dl>
+	    <dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
+          <dt><p id="red"><tt>4-trace firmware only;
+enable if off, else goto OFF/SINGLE</tt>TRACE 3</p>
+            <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl>
           </dt>
         </dl> 
       </li>
@@ -317,7 +348,7 @@ enable if off, else goto OFF/SINGLE"><p id="red">TRACE 3</p>
         <dl>
           <dt><p>LOGMAG</p></dt>
 	  <dt><p>PHASE</p></dt>
-	  <dt><p title="not implemented">DELAY</p></dt>
+	  <dt><p><tt>not implemented</tt>DELAY</p></dt>
 	  <dt><p>SMITH</p></dt>
 	  <dt><p>SWR</p></dt>
 	  <dt><p>MORE</p>
@@ -330,13 +361,18 @@ enable if off, else goto OFF/SINGLE"><p id="red">TRACE 3</p>
       </li>
       <li><p>SCALE</p>
         <dl>
-          <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-          <dt><p><a href="#U132" title="position trace vertically">REFERENCE POSITION</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-	  <dt title="compensate CAL by e.g. cable length in picoseconds"><p><a href="#U133">ELECTRICAL DELAY</a></p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
+          <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p><tt>touch nanoVNA screen below menu to launch numeric keypad
+click here/now for numeric input discussion</tt><a href="#U132">NUM KEYS</a></p></dt>
+          <dt><p>
+          <tt>position trace vertically</tt>
+          <a href="#U132">REFERENCE POSITION</a></p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+	  <dt><p><tt>compensate CAL by e.g. cable length in picoseconds</tt><a href="#U133">ELECTRICAL DELAY</a></p><p>
+		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
         </dl>
       </li>
-      <li><p title="select port to measure
-works for 2 and 4 trace firmware">CHANNEL</p>
+      <li><p><tt>select port to measure;
+works for 2 and 4 trace firmware</tt>CHANNEL</p>
         <ul>
 	  <li><p>CH0 REFLECT</p></li>
 	  <li><p>CH1 THROUGH</p></li>
@@ -346,7 +382,8 @@ works for 2 and 4 trace firmware">CHANNEL</p>
   </li>
   <li id="u30"><p><a href="#U2">MARKER</a></p>
     <ul>
-	<li id="p20" title="with 2 markers enabled, marker 2 will read DELTA Frequency in relation to marker 1"><p>SELECT MARKER
+	<li id="p20"><p><tt>with 2 markers enabled,
+	 marker 2 will read DELTA Frequency in relation to marker 1</tt>SELECT MARKER
 	  <dl>
 	  <dt><p>MARKER 1</p></dt>
 	  <dt><p>MARKER 2</p></dt>
@@ -357,38 +394,38 @@ works for 2 and 4 trace firmware">CHANNEL</p>
 	</li>
 	<li>
 	<dl id="li-child">
-	<dd><p title="increase minimum sweep frequency
-to selected marker">START</p></dt>
-	<dt><p title="decrease maximum sweep frequency
-to selected marker">STOP</p></dt>
-	<dt><p title="shift middle of frequency sweep
-to selected marker">CENTER</p></dt>
-	<dt><p title="sweep frequency between 2 current markers">SPAN</p></dt>
+	<dd><p><tt>increase minimum sweep frequency
+to selected marker</tt>START</p></dt>
+	<dt><p><tt>decrease maximum sweep frequency
+to selected marker</tt>STOP</p></dt>
+	<dt><p><tt>shift middle of frequency sweep
+to selected marker</tt>CENTER</p></dt>
+	<dt><p><tt>sweep frequency between 2 current markers</tt>SPAN</p></dt>
 	</dl>
 	</li>
     </ul>
   </li>
-  <li><p title="set sweep or single frequency">STIMULUS</p>
+  <li><p><tt>set sweep or single frequency</tt>STIMULUS</p>
     <dl>
-      <dt id="p40"><p title="sweep lower limit &gt 50kHz">START</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt><p title="sweep upper limit &lt 900mHz">STOP</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt><p title="(START+STOP)/2">CENTER</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt><p title="STOP-START">SPAN</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt><p title="50 kHz &lt constant &lt 900mHz">CW FREQ</p><p title="touch screen below menu to launch">NUM KEYS</p></dt>
-      <dt title="freeze data collection
-click hyperlink for saving frozen data via USB"><p><a href="#U36">PAUSE SWEEP</a></p></dt>
+      <dt id="p40"><p><tt>sweep lower limit &gt 50kHz</tt>START</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>sweep upper limit &lt 900mHz</tt>STOP</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>(START+STOP)/2</tt>CENTER</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>STOP-START</tt>SPAN</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>50 kHz &lt constant &lt 900mHz</tt>CW FREQ</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>freeze data collection
+click hyperlink for saving frozen data via USB</tt><a href="#U36">PAUSE SWEEP</a></p></dt>
     </dl>
   </li>
-  <li><p>CAL</p>
+  <li><p><a href="#N4">CAL</a></p>
     <ul>
-      <li><p title="press RESET to clear data before calibrating.<br>
-Make appropriate [dis]connections before touching associated button">CALIBRATE</p>
+      <li><p><tt>press RESET to clear data before calibrating.<br>
+Make appropriate [dis]connections before touching associated button</tt>CALIBRATE</p>
         <dl>
           <dd><p>OPEN</p></dt>
           <dt><p>SHORT</p></dt>
-          <dt><p title="attach 50 Ohm load to TX port">LOAD</p></dt>
-          <dt><p title="attach a 50 Ohm load to each port">ISOLATION</p></dt>
-          <dt><p title="connect SMA cable[s] between ports">THRU</p></dt>
+          <dt><p><tt>attach 50 Ohm load to TX port</tt>LOAD</p></dt>
+          <dt><p><tt>attach a 50 Ohm load to each port</tt>ISOLATION</p></dt>
+          <dt><p><tt>connect SMA cable[s] between ports</tt>THRU</p></dt>
           <dt><p>DONE</p>
             <ul>
               <li><p>SAVE 0</p></li>
@@ -400,11 +437,15 @@ Make appropriate [dis]connections before touching associated button">CALIBRATE</
           </dt>
         </dl>
       </li>
-      <li><p title="press to clear data before CALIBRATE">RESET</p></li>
-      <li id="u30"><p title="turn calibration on or off(?)">CORRECT</p></li>
+      <li><p><tt>press to clear data before CALIBRATE</tt>RESET</p></li>
+      <li id="u30"><p><tt>toggle calibration<br>on / off</tt>CORRECT</p></li>
     </ul>
   </li>
-  <li title="DISPLAY+MARKER+STIMULUS+CAL settings"><p>RECALL SAVE</p>
+  <li>
+    <p>
+    <tt>DISPLAY+MARKER +STIMULUS+CAL settings</tt>
+	RECALL SAVE
+    </p>
   <ul>
     <li><p>RECALL</p>
       <dl>

@@ -260,14 +260,13 @@ a:visited {
 }
 
 /* branch and stem styles on hover */
-.tree li p:hover~dl::before,
 .tree dt p:hover~dl::before,
+.tree li p:hover~dl dt dl::before,
+.tree dt p:hover~ul li dl::before,
 .tree li p:hover~p::before,
 .tree li p:hover~ul li p::before,
 .tree li p:hover~dl dt p::before,
 .tree li p:hover~dl dd p::before,
-.tree dt p:hover~ul li dl::before,
-.tree li p:hover~dl dt dl::before,
 .tree li p:hover~ul li dl dt::before,
 .tree li p:hover~ul li dl dt::after,
 .tree li p:hover~ul li dl dd::after,

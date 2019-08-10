@@ -332,7 +332,7 @@ a:visited {
 <ul>
   <li><p><a href="#U1">DISPLAY</a></p>
     <ul>
-      <li><p><tt>2 or 4, depending on firmware</tt><a href="#U1L1">TRACE</a></p>
+      <li><p><tt>2/4 limit for aa/ch firmware</tt><a href="#U1L1">TRACE</a></p>
         <dl>
           <dt><p id="yel">
 	    <tt>enable if off, else goto OFF/SINGLE</tt>TRACE 0</p>
@@ -340,11 +340,11 @@ a:visited {
           <dt><p id="blu">
 		<tt>enable if off, else goto OFF/SINGLE</tt>TRACE 1</p>
 	    <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
-          <dt><p id="grn"><tt>4-trace firmware only;
-enable if off, else goto OFF/SINGLE</tt>TRACE 2</p><dl>
+          <dt><p id="grn"><tt>{<i><b>4-trace firmware only</b></i>}<br>
+		enable if off, else goto OFF/SINGLE</tt>TRACE 2</p><dl>
 	    <dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl></dt>
-          <dt><p id="red"><tt>4-trace firmware only;
-enable if off, else goto OFF/SINGLE</tt>TRACE 3</p>
+          <dt><p id="red"><tt>{<b><i>4-trace firmware only</i></b>}<br>
+		enable if off, else goto OFF/SINGLE</tt>TRACE 3</p>
             <dl><dd><p>OFF</p></dd><dt><p><tt>disable other traces</tt>SINGLE</p></dt></dl>
           </dt>
         </dl> 
@@ -366,18 +366,21 @@ enable if off, else goto OFF/SINGLE</tt>TRACE 3</p>
       </li>
       <li><p>SCALE</p>
         <dl>
-          <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p><tt>touch nanoVNA screen below menu to launch numeric keypad
-click here/now for numeric input discussion</tt><a href="#U132">NUM KEYS</a></p></dt>
+          <dt id="p60"><p><a href="#U131">SCALE/DIV</a></p><p>
+		<tt>touch nanoVNA screen below menu to launch numeric keypad;<br>
+		click hyperlink for numeric input discussion</tt>
+		<a href="#U132">NUM KEYS</a></p></dt>
           <dt><p>
           <tt>position trace vertically</tt>
           <a href="#U132">REFERENCE POSITION</a></p><p>
 	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-	  <dt><p><tt>compensate CAL by e.g. cable length in picoseconds</tt><a href="#U133">ELECTRICAL DELAY</a></p><p>
+	  <dt><p><tt>compensate CAL by e.g. cable length in picoseconds</tt>
+		<a href="#U133">ELECTRICAL DELAY</a></p><p>
 		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
         </dl>
       </li>
-      <li><p><tt>select port to measure;
-works for 2 and 4 trace firmware</tt>CHANNEL</p>
+      <li><p><tt>select port to measure;<br>
+	works for 2 and 4 trace firmware</tt>CHANNEL</p>
         <ul>
 	  <li><p>CH0 REFLECT</p></li>
 	  <li><p>CH1 THROUGH</p></li>
@@ -399,12 +402,12 @@ works for 2 and 4 trace firmware</tt>CHANNEL</p>
 	</li>
 	<li>
 	<dl id="li-child">
-	<dd><p><tt>increase minimum sweep frequency
-to selected marker</tt>START</p></dt>
-	<dt><p><tt>decrease maximum sweep frequency
-to selected marker</tt>STOP</p></dt>
-	<dt><p><tt>shift middle of frequency sweep
-to selected marker</tt>CENTER</p></dt>
+	<dd><p><tt>increase minimum sweep frequency<br>
+	to selected marker</tt>START</p></dt>
+	<dt><p><tt>decrease maximum sweep frequency<br>
+	to selected marker</tt>STOP</p></dt>
+	<dt><p><tt>shift center of frequency sweep<br>
+	to selected marker</tt>CENTER</p></dt>
 	<dt><p><tt>sweep frequency between 2 current markers</tt>SPAN</p></dt>
 	</dl>
 	</li>
@@ -412,19 +415,22 @@ to selected marker</tt>CENTER</p></dt>
   </li>
   <li><p><tt>set sweep or single frequency</tt>STIMULUS</p>
     <dl>
-      <dt id="p40"><p><tt>sweep lower limit &gt 50kHz</tt>START</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>sweep upper limit &lt 900mHz</tt>STOP</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt id="p40"><p><tt>sweep lower limit &gt 50kHz</tt>START</p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>sweep upper limit &lt 900mHz</tt>STOP</p><p>
+		<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
       <dt><p><tt>(START+STOP)/2</tt>CENTER</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
       <dt><p><tt>STOP-START</tt>SPAN</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>50 kHz &lt constant &lt 900mHz</tt>CW FREQ</p><p><tt>touch below menu to launch</tt>NUM KEYS</p></dt>
-      <dt><p><tt>freeze data collection
-click hyperlink for saving frozen data via USB</tt><a href="#U36">PAUSE SWEEP</a></p></dt>
+      <dt><p><tt>50 kHz &lt constant &lt 900mHz</tt>CW FREQ</p><p>
+	<tt>touch below menu to launch</tt>NUM KEYS</p></dt>
+      <dt><p><tt>freeze data collection;<br>
+	click hyperlink for saving frozen data via USB</tt><a href="#U36">PAUSE SWEEP</a></p></dt>
     </dl>
   </li>
   <li><p><a href="#N4">CAL</a></p>
     <ul>
       <li><p><tt>press RESET to clear data before calibrating.<br>
-Make appropriate [dis]connections before touching associated button</tt>CALIBRATE</p>
+	Make appropriate [dis]connections before touching associated button</tt>CALIBRATE</p>
         <dl>
           <dd><p>OPEN</p></dt>
           <dt><p>SHORT</p></dt>
